@@ -1,6 +1,6 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { BasicDetails } from '../components/';
+import { BasicDetails, Education, Experience } from '../components/';
 export default function Profile({ users }) {
   const { id } = useParams();
   const profileData =
@@ -14,14 +14,22 @@ export default function Profile({ users }) {
         <div>
           {/* about  */}
           <h3>About {profileData[0].name}</h3>
+          <p>{profileData[0].bio}</p>
         </div>
+        <div>{/* basic details */}</div>
         <div>
-          {/* basic details */}
+          {/* contact details */}
           <BasicDetails details={profileData[0]} />
         </div>
-        <div>{/* contact details */}</div>
         <div>{/* family details */}</div>
-        <div>{/* career details */}</div>
+        <div>
+          {/* education details */}
+          <Education details={profileData[0]} />
+        </div>
+        <div>
+          {/* career details */}
+          <Experience details={profileData[0]} />
+        </div>
       </div>
     </div>
   );

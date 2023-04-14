@@ -1,6 +1,5 @@
 import React from 'react';
 export default function BasicDetails({ details }) {
-  console.log(details);
   return (
     <div>
       <h4>Basic Details</h4>
