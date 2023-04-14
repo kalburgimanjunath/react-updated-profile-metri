@@ -14,7 +14,7 @@ import { Navbar, Searchbox } from './components/';
 import { USERS } from './data/users';
 export default function App() {
   const [search, searchclicked] = useState('');
-  const [filterData, setFilterData] = useState();
+  const [filterData, setFilterData] = useState(USERS);
   useEffect(() => {
     const filterData =
       USERS &&
