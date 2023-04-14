@@ -27,7 +27,7 @@ export default function App() {
   return (
     <div>
       <Navbar />
-      <Searchbox value={search} onChange={searchclicked} />
+      <Searchbox value={search} onChange={() => searchclicked} />
       <Routes>
         <Route path="/search" element={<Search users={filterData} />}></Route>
         <Route
