@@ -4,4 +4,13 @@ import Navbar from './Navbar';
 import BasicDetails from './BasicDetails';
 import Education from './Education';
 import Experience from './Experience';
-export { Avatar, Cards, Navbar, BasicDetails, Education, Experience };
+import Searchbox from './Searchbox';
+export {
+  Avatar,
+  Cards,
+  Navbar,
+  BasicDetails,
+  Education,
+  Experience,
+  Searchbox,
+};
