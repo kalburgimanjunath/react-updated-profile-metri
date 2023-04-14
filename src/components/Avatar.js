@@ -5,7 +5,7 @@ export default function Avatar({ name, image }) {
       <div className="avatar-image-container">
         <img
           className="avatar-image"
-          src={image}
+          src={image ? image : 'https://i.pravatar.cc/300'}
           style={{ width: 100, height: 100 }}
         />
       </div>

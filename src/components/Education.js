@@ -6,26 +6,31 @@ export default function Education({ details }) {
     EDUCATION.filter((item) => {
       return item.userId == details.id;
     });
-  console.log(filterData);
   return (
-    <div>
-      <h4>Education Details</h4>
-      <ol>
-        {filterData &&
-          filterData.map((item) => {
-            return (
-              <li>
-                <div>
-                  {item.title} from {item.college} on {item.passingYear}
-                </div>
-                <div>Major in {item.major}</div>
-                <div>Description: {item.description}</div>
-                <div>Achievements : {item.achievements}</div>
-                <div>certificates:{item.certificates}</div>
-              </li>
-            );
-          })}
-      </ol>
-    </div>
+    <>
+      {filterData && filterData.length > 0 ? (
+        <>
+          <h4>Education Details</h4>
+          <ol>
+            {filterData &&
+              filterData.map((item) => {
+                return (
+                  <li>
+                    <div>
+                      {item.title} from {item.college} on {item.passingYear}
+                    </div>
+                    <div>Major in {item.major}</div>
+                    <div>Description: {item.description}</div>
+                    <div>Achievements : {item.achievements}</div>
+                    <div>certificates:{item.certificates}</div>
+                  </li>
+                );
+              })}
+          </ol>
+        </>
+      ) : (
+        <></>
+      )}
+    </>
   );
 }
