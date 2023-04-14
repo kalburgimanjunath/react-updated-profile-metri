@@ -6,7 +6,7 @@ export default function Cards({ title, users, subtitle }) {
     const [isConnected, setConnected] = useState(false);
     return (
       <div className="card">
-        <Link to={`./profile/${id}`}>
+        <Link to={`../profile/${id}`}>
           <Avatar name={name} image="https://i.pravatar.cc/300" />
         </Link>
         <button type="button" onClick={() => setConnected(!isConnected)}>
