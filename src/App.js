@@ -15,19 +15,21 @@ import { USERS } from './data/users';
 export default function App() {
   const [search, searchclicked] = useState('');
   const [filterData, setFilterData] = useState(USERS);
-  useEffect(() => {
-    const filterData =
-      USERS &&
-      USERS.filter((item) => {
-        return item.name == search;
-      });
-    setFilterData(filterData);
-  }, [search]);
-
+    if (search.length > 0) {
+      const filterData =
+        USERS &&
+        USERS.includes((item) => {
+          return item.name == search;
+        });
+      setFilterData(filterData);
+    }
   return (
     <div>
       <Navbar />
-      <Searchbox value={search} onChange={() => searchclicked} />
+      <Searchbox
+        value={search}
+        onChange={(e) => searchclicked(e.target.value)}
+      />
       <Routes>
         <Route path="/search" element={<Search users={filterData} />}></Route>
         <Route
